@@ -9,6 +9,10 @@
     <Import_RootNamespace>Intech.PrevSystemWeb.Entidades</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    
+    <Compile Include="$(MSBuildThisFileDirectory)DadosPessoaisEntidade.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PessoaFisicaEntidade.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProcessoBeneficioEntidade.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UsuarioEntidade.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UsuarioGrupoEntidade.cs" />
   </ItemGroup>
 </Project>

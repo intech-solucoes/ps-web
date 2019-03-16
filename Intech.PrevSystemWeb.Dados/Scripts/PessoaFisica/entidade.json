@@ -1,0 +1,10 @@
+﻿{
+    "nomeTabela": "FI_PESSOA_FISICA",
+    "colunasExtras": [
+        {
+            "nome": "NO_PESSOA",
+            "tipo": "string",
+            "aceitaNulo": true
+        }
+    ]
+}

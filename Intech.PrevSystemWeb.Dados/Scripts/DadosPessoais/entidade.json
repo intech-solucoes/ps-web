@@ -1,0 +1,205 @@
+﻿{
+    "nomeTabela": "FI_CONTRATO_TRABALHO",
+    "colunasExtras": [
+        {
+            "nome": "NO_PESSOA",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "IR_SEXO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DS_SEXO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DT_NASCIMENTO",
+            "tipo": "DateTime",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NR_CPF",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "SIGLA_EMPRESA",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NR_CEP",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DS_ENDERECO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NR_ENDERECO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DS_COMPLEMENTO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NO_BAIRRO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NR_FONE",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NR_CELULAR",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NO_EMAIL",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NO_EMPRESA",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NO_MAE",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NO_PAI",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NO_NATURALIDADE",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "EE_POLITICAMENTE_EXPOSTO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "EE_US_PERSON",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "CD_ESTADO_CIVIL",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DS_ESTADO_CIVIL",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "CD_GRAU_INSTRUCAO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DS_GRAU_INSTRUCAO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "SQ_PAIS_NACIONALIDADE",
+            "tipo": "int",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NO_PAIS_NACIONALIDADE",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "CD_BANCO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NO_BANCO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "CD_AGENCIA",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DV_AGENCIA",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NR_CC",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DV_CC",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "SQ_ENDERECO",
+            "tipo": "int",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "CD_TIPO_ENDERECO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DS_TIPO_ENDERECO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "CD_MUNICIPIO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DS_MUNICIPIO",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "CD_UF",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "SQ_TIPO_LOGRADOURO",
+            "tipo": "int",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NO_TIPO_LOGRADOURO",
+            "tipo": "string",
+            "aceitaNulo": true
+        }
+    ]
+}

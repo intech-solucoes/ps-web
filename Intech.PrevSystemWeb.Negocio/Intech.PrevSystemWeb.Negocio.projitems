@@ -9,5 +9,10 @@
     <Import_RootNamespace>Intech.PrevSystemWeb.Negocio</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\DadosPessoaisProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\PessoaFisicaProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\ProcessoBeneficioProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\UsuarioGrupoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\UsuarioProxy.cs" />
   </ItemGroup>
 </Project>
