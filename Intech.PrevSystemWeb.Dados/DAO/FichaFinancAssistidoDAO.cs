@@ -13,7 +13,41 @@ namespace Intech.PrevSystemWeb.Dados.DAO
     public abstract class FichaFinancAssistidoDAO : BaseDAO<FichaFinancAssistidoEntidade>
     {
         
-		public virtual IEnumerable<FichaFinancAssistidoEntidade> BuscarPorProcesso(int SQ_PROCESSO)
+		public virtual IEnumerable<FichaFinancAssistidoEntidade> BuscarDatasPorProcesso(int SQ_PROCESSO, DateTime DT_REFERENCIA)
+		{
+			try
+			{
+				if(AppSettings.IS_SQL_SERVER_PROVIDER)
+					return Conexao.Query<FichaFinancAssistidoEntidade>("SELECT DISTINCT FF.DT_COMPETENCIA FROM fi_ficha_financ_assistido FF      INNER JOIN fi_rubrica_folha_pagamento RU ON RU.SQ_RUBRICA = FF.SQ_RUBRICA      INNER JOIN fi_cronograma_credito CR ON CR.SQ_CRONOGRAMA = FF.SQ_CRONOGRAMA WHERE FF.SQ_PROCESSO = @SQ_PROCESSO   AND RU.IR_LANCAMENTO IN ('P', 'D')   AND RU.EE_INCIDE_LIQUIDO = 'S'   AND FF.DT_COMPETENCIA >= @DT_REFERENCIA ORDER BY FF.DT_COMPETENCIA DESC", new { SQ_PROCESSO, DT_REFERENCIA });
+				else if(AppSettings.IS_ORACLE_PROVIDER)
+					return Conexao.Query<FichaFinancAssistidoEntidade>("SELECT DISTINCT FF.DT_COMPETENCIA FROM FI_FICHA_FINANC_ASSISTIDO  FF  INNER  JOIN FI_RUBRICA_FOLHA_PAGAMENTO   RU  ON RU.SQ_RUBRICA=FF.SQ_RUBRICA INNER  JOIN FI_CRONOGRAMA_CREDITO   CR  ON CR.SQ_CRONOGRAMA=FF.SQ_CRONOGRAMA WHERE FF.SQ_PROCESSO=:SQ_PROCESSO AND RU.IR_LANCAMENTO IN ('P', 'D') AND RU.EE_INCIDE_LIQUIDO='S' AND FF.DT_COMPETENCIA>=:DT_REFERENCIA ORDER BY FF.DT_COMPETENCIA DESC", new { SQ_PROCESSO, DT_REFERENCIA });
+				else
+					throw new Exception("Provider não suportado!");
+			}
+			finally
+			{
+				Conexao.Close();
+			}
+		}
+
+		public virtual IEnumerable<FichaFinancAssistidoEntidade> BuscarPorProcessoDataCompetencia(int SQ_PROCESSO, DateTime DT_COMPETENCIA)
+		{
+			try
+			{
+				if(AppSettings.IS_SQL_SERVER_PROVIDER)
+					return Conexao.Query<FichaFinancAssistidoEntidade>("SELECT FF.*,        RU.DS_RUBRICA,        CASE             WHEN FF.IR_LANCAMENTO = 'P' THEN 'PROVENTO'             WHEN FF.IR_LANCAMENTO = 'D' THEN 'DESCONTO'        END AS DS_LANCAMENTO FROM fi_ficha_financ_assistido FF      INNER JOIN fi_rubrica_folha_pagamento RU ON RU.SQ_RUBRICA = FF.SQ_RUBRICA      INNER JOIN fi_cronograma_credito CR ON CR.SQ_CRONOGRAMA = FF.SQ_CRONOGRAMA WHERE FF.SQ_PROCESSO = @SQ_PROCESSO   AND FF.DT_COMPETENCIA = @DT_COMPETENCIA   AND RU.IR_LANCAMENTO IN ('P', 'D')   AND RU.EE_INCIDE_LIQUIDO = 'S' ORDER BY RU.IR_LANCAMENTO DESC", new { SQ_PROCESSO, DT_COMPETENCIA });
+				else if(AppSettings.IS_ORACLE_PROVIDER)
+					return Conexao.Query<FichaFinancAssistidoEntidade>("SELECT FF.*, RU.DS_RUBRICA, CASE  WHEN FF.IR_LANCAMENTO='P' THEN 'PROVENTO' WHEN FF.IR_LANCAMENTO='D' THEN 'DESCONTO' END  AS DS_LANCAMENTO FROM FI_FICHA_FINANC_ASSISTIDO  FF  INNER  JOIN FI_RUBRICA_FOLHA_PAGAMENTO   RU  ON RU.SQ_RUBRICA=FF.SQ_RUBRICA INNER  JOIN FI_CRONOGRAMA_CREDITO   CR  ON CR.SQ_CRONOGRAMA=FF.SQ_CRONOGRAMA WHERE FF.SQ_PROCESSO=:SQ_PROCESSO AND FF.DT_COMPETENCIA=:DT_COMPETENCIA AND RU.IR_LANCAMENTO IN ('P', 'D') AND RU.EE_INCIDE_LIQUIDO='S' ORDER BY RU.IR_LANCAMENTO DESC", new { SQ_PROCESSO, DT_COMPETENCIA });
+				else
+					throw new Exception("Provider não suportado!");
+			}
+			finally
+			{
+				Conexao.Close();
+			}
+		}
+
+		public virtual IEnumerable<FichaFinancAssistidoEntidade> BuscarUltimaPorProcesso(int SQ_PROCESSO)
 		{
 			try
 			{

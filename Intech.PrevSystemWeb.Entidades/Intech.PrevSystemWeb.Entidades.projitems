@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DadosPessoaisEntidade.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dominios\DMN_LANCAMENTO_FICHA.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FichaContribPrevidencialEntidade.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FichaFinancAssistidoEntidade.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FichaSalarioContribuicaoEntidade.cs" />

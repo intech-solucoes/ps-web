@@ -10,6 +10,26 @@
             "nome": "DS_LANCAMENTO",
             "tipo": "string",
             "aceitaNulo": false
+        },
+        {
+            "nome": "DS_COMPETENCIA",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "VAL_BRUTO",
+            "tipo": "decimal",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "VAL_DESCONTOS",
+            "tipo": "decimal",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "VAL_LIQUIDO",
+            "tipo": "decimal",
+            "aceitaNulo": true
         }
     ]
 }

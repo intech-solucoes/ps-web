@@ -23,6 +23,10 @@ namespace Intech.PrevSystemWeb.Entidades
 		public string IR_LANCAMENTO { get; set; }
 		[Write(false)] public string DS_RUBRICA { get; set; }
 		[Write(false)] public string DS_LANCAMENTO { get; set; }
+		[Write(false)] public string DS_COMPETENCIA { get; set; }
+		[Write(false)] public decimal? VAL_BRUTO { get; set; }
+		[Write(false)] public decimal? VAL_DESCONTOS { get; set; }
+		[Write(false)] public decimal? VAL_LIQUIDO { get; set; }
         
     }
 }
