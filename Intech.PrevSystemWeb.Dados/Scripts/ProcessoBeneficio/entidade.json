@@ -1,3 +1,15 @@
 ﻿{
-  "nomeTabela": "FI_PROCESSO_BENEFICIO"
+    "nomeTabela": "FI_PROCESSO_BENEFICIO",
+    "colunasExtras": [
+        {
+            "nome": "DS_ESPECIE",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DS_MOT_SITUACAO",
+            "tipo": "string",
+            "aceitaNulo": true
+        }
+    ]
 }

@@ -13,8 +13,20 @@
     <None Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\BuscarPorCdPessoa.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\BuscarPensionistaTodosPorCdPessoa.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\BuscarTodosPorCdPessoa.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarDataUltimaContribuicao.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarPorContratoPlanoFundo.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarPorContratoPlanoReferencia.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\FichaFinancAssistido\BuscarPorProcesso.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\FichaSalarioContribuicao\BuscarUltimoPorContratoPlano.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\Indice\BuscarPorCdIndice.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\Indice\BuscarPorCdIndicePeriodo.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\Indice\BuscarUltimoPorCdIndice.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\BuscarPorCPF.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoVinculado\BuscarPorContratoTrabalhoPlano.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoVinculado\BuscarPorContratoTrabalho.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoVinculado\BuscarPorCpf.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\ProcessoBeneficio\BuscarPorCdPessoa.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\ProcessoBeneficio\BuscarPorContratoPlano.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\UsuarioGrupo\BuscarPorUsuario.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Usuario\BuscarPorCPF.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Usuario\BuscarPorLoginSenha.sql" />
@@ -24,14 +36,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\FichaFinancAssistido\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\FichaSalarioContribuicao\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\Indice\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\PlanoVinculado\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\ProcessoBeneficio\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\UsuarioGrupo\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\Usuario\entidade.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)DAO\DadosPessoaisDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\FichaContribPrevidencialDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\FichaFinancAssistidoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\FichaSalarioContribuicaoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\IndiceDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\PessoaFisicaDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\PlanoVinculadoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\ProcessoBeneficioDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\UsuarioDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\UsuarioGrupoDAO.cs" />

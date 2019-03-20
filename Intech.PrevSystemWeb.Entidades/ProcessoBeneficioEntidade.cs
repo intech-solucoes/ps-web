@@ -34,6 +34,8 @@ namespace Intech.PrevSystemWeb.Entidades
 		public string IR_TIPO_CALCULO { get; set; }
 		public string IR_EVOLUCAO_RENDA { get; set; }
 		public string IR_CONVERSAO_RISCO { get; set; }
+		[Write(false)] public string DS_ESPECIE { get; set; }
+		[Write(false)] public string DS_MOT_SITUACAO { get; set; }
         
     }
 }

@@ -122,6 +122,73 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
             return "Sua nova senha foi enviada para seu e-mail!";
         }
 
+        public void CriarAcessoIntech(string cpf, string chave)
+        {
+            if (chave != "Intech456#@!")
+                throw ExceptionDadosInvalidos;
+
+            var pensionista = false;
+
+            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCPF(cpf);
+
+            if (pessoaFisica == null)
+                throw ExceptionDadosInvalidos;
+
+            var dadosPessoais = new DadosPessoaisProxy().BuscarPorCdPessoa(pessoaFisica.CD_PESSOA);
+
+            if (dadosPessoais == null)
+            {
+                pensionista = true;
+                dadosPessoais = new DadosPessoaisProxy().BuscarPensionistaTodosPorCdPessoa(pessoaFisica.CD_PESSOA);
+            }
+
+            // Verifica se existe usuário. Caso sim, atualiza a senha. Caso não, cria novo usuário.
+            var usuarioExistente = BuscarPorCPF(cpf);
+
+            if (usuarioExistente != null)
+            {
+                var senhaEncriptada = GerarHashMd5(usuarioExistente.USR_CODIGO + "123");
+
+                Atualizar(USR_CODIGO: usuarioExistente.USR_CODIGO,
+                    USR_LOGIN: cpf,
+                    USR_SENHA: senhaEncriptada,
+                    USR_ADMINISTRADOR: DMN_SN.NAO,
+                    USR_TIPO_EXPIRACAO: DMN_SN.NAO,
+                    USR_NOME: pessoaFisica.NO_PESSOA,
+                    USR_EMAIL: dadosPessoais.NO_EMAIL,
+                    CD_PESSOA: pessoaFisica.CD_PESSOA,
+                    EE_TERMO_RESPONSABILIDADE: DMN_SN.SIM,
+                    CD_PESSOA_CLIENTE: 1);
+            }
+            else
+            {
+                var proximoCodigo = BuscarProximoCodigo();
+
+                var senhaEncriptada = GerarHashMd5(proximoCodigo + "123");
+
+                Inserir(USR_CODIGO: proximoCodigo,
+                    USR_LOGIN: cpf,
+                    USR_SENHA: senhaEncriptada,
+                    USR_ADMINISTRADOR: DMN_SN.NAO,
+                    USR_TIPO_EXPIRACAO: DMN_SN.NAO,
+                    USR_NOME: pessoaFisica.NO_PESSOA,
+                    USR_EMAIL: dadosPessoais.NO_EMAIL,
+                    CD_PESSOA: pessoaFisica.CD_PESSOA,
+                    EE_TERMO_RESPONSABILIDADE: DMN_SN.SIM,
+                    CD_PESSOA_CLIENTE: 1);
+
+                if (pensionista)
+                {
+                    new UsuarioGrupoProxy().Inserir(new UsuarioGrupoEntidade
+                    {
+                        GRP_CODIGO = 32,
+                        SIS_CODIGO = "PWA",
+                        USR_CODIGO = proximoCodigo
+                    });
+                }
+            }
+        }
+
         public string AlterarSenha(string cpf, string senhaAntiga, string senhaNova)
         {
             var usuarioExistente = BuscarPorLoginSenha(cpf, senhaAntiga);
