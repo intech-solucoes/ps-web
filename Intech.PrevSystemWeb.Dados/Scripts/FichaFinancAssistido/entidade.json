@@ -1,3 +1,15 @@
 ﻿{
-    "nomeTabela": "FI_FICHA_FINANC_ASSISTIDO"
+    "nomeTabela": "FI_FICHA_FINANC_ASSISTIDO",
+    "colunasExtras": [
+        {
+            "nome": "DS_RUBRICA",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "DS_LANCAMENTO",
+            "tipo": "string",
+            "aceitaNulo": false
+        }
+    ]
 }

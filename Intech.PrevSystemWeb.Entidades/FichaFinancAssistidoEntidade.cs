@@ -21,6 +21,8 @@ namespace Intech.PrevSystemWeb.Entidades
 		public int? NR_PARCELA { get; set; }
 		public int? QT_PARCELA { get; set; }
 		public string IR_LANCAMENTO { get; set; }
+		[Write(false)] public string DS_RUBRICA { get; set; }
+		[Write(false)] public string DS_LANCAMENTO { get; set; }
         
     }
 }
