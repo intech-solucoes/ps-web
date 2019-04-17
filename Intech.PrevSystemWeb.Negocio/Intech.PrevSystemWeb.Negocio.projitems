@@ -9,12 +9,19 @@
     <Import_RootNamespace>Intech.PrevSystemWeb.Negocio</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Calculos\IRRF\BaseCalculoIRRF.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Calculos\IRRF\CalculoIRRFProgressivo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\DadosPessoaisProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\DependenteProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\FichaContribPrevidencialProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\FichaFinancAssistidoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\FichaSalarioContribuicaoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\IndiceProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\IRRFFaixaCalculoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\IRRFFaixaRegressivoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\IRRFProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\PessoaFisicaProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\PlanoPrevidencialProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\PlanoVinculadoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\ProcessoBeneficioProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\UsuarioGrupoProxy.cs" />

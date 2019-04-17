@@ -13,6 +13,23 @@ namespace Intech.PrevSystemWeb.Dados.DAO
     public abstract class FichaContribPrevidencialDAO : BaseDAO<FichaContribPrevidencialEntidade>
     {
         
+		public virtual DateTime BuscarDataPrimeiraContribuicao(int SQ_CONTRATO_TRABALHO, int SQ_PLANO_PREVIDENCIAL)
+		{
+			try
+			{
+				if(AppSettings.IS_SQL_SERVER_PROVIDER)
+					return Conexao.QuerySingleOrDefault<DateTime>("SELECT MIN(DT_REFERENCIA)  FROM FI_FICHA_CONTRIB_PREVIDENCIAL  WHERE SQ_CONTRATO_TRABALHO = @SQ_CONTRATO_TRABALHO  AND SQ_PLANO_PREVIDENCIAL = @SQ_PLANO_PREVIDENCIAL", new { SQ_CONTRATO_TRABALHO, SQ_PLANO_PREVIDENCIAL });
+				else if(AppSettings.IS_ORACLE_PROVIDER)
+					return Conexao.QuerySingleOrDefault<DateTime>("SELECT MIN(DT_REFERENCIA) FROM FI_FICHA_CONTRIB_PREVIDENCIAL WHERE SQ_CONTRATO_TRABALHO=:SQ_CONTRATO_TRABALHO AND SQ_PLANO_PREVIDENCIAL=:SQ_PLANO_PREVIDENCIAL", new { SQ_CONTRATO_TRABALHO, SQ_PLANO_PREVIDENCIAL });
+				else
+					throw new Exception("Provider não suportado!");
+			}
+			finally
+			{
+				Conexao.Close();
+			}
+		}
+
 		public virtual DateTime BuscarDataUltimaContribuicao(int SQ_CONTRATO_TRABALHO, int SQ_PLANO_PREVIDENCIAL)
 		{
 			try

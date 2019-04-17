@@ -7,12 +7,32 @@
             "aceitaNulo": false
         },
         {
+            "nome": "CD_RUBRICA",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
             "nome": "DS_LANCAMENTO",
             "tipo": "string",
             "aceitaNulo": false
         },
         {
             "nome": "DS_COMPETENCIA",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "DT_REFERENCIA",
+            "tipo": "DateTime",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "DT_CREDITO",
+            "tipo": "DateTime",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "DS_REFERENCIA",
             "tipo": "string",
             "aceitaNulo": false
         },
@@ -28,6 +48,16 @@
         },
         {
             "nome": "VAL_LIQUIDO",
+            "tipo": "decimal",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "VAL_DESCONTO",
+            "tipo": "decimal",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "VAL_PROVENTO",
             "tipo": "decimal",
             "aceitaNulo": true
         }

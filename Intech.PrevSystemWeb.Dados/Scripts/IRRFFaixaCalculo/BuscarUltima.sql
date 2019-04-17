@@ -1,0 +1,8 @@
+﻿/*Config
+    RetornaLista
+    Retorno
+        -IRRFFaixaCalculoEntidade
+*/
+
+SELECT * FROM FI_IRRF_FAIXA_CALCULO
+WHERE DT_INIC_VALIDADE = (SELECT MAX(DT_INIC_VALIDADE) FROM FI_IRRF_FAIXA_CALCULO)

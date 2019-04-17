@@ -22,11 +22,17 @@ namespace Intech.PrevSystemWeb.Entidades
 		public int? QT_PARCELA { get; set; }
 		public string IR_LANCAMENTO { get; set; }
 		[Write(false)] public string DS_RUBRICA { get; set; }
+		[Write(false)] public string CD_RUBRICA { get; set; }
 		[Write(false)] public string DS_LANCAMENTO { get; set; }
 		[Write(false)] public string DS_COMPETENCIA { get; set; }
+		[Write(false)] public DateTime DT_REFERENCIA { get; set; }
+		[Write(false)] public DateTime DT_CREDITO { get; set; }
+		[Write(false)] public string DS_REFERENCIA { get; set; }
 		[Write(false)] public decimal? VAL_BRUTO { get; set; }
 		[Write(false)] public decimal? VAL_DESCONTOS { get; set; }
 		[Write(false)] public decimal? VAL_LIQUIDO { get; set; }
+		[Write(false)] public decimal? VAL_DESCONTO { get; set; }
+		[Write(false)] public decimal? VAL_PROVENTO { get; set; }
         
     }
 }
