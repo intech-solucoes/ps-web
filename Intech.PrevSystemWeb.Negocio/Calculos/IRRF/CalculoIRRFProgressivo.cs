@@ -1,6 +1,5 @@
 ﻿#region Usings
 using Intech.PrevSystemWeb.Entidades;
-using Intech.PrevSystemWeb.Entidades.Extensoes;
 using Intech.PrevSystemWeb.Negocio.Proxy;
 using System;
 using System.Collections.Generic;

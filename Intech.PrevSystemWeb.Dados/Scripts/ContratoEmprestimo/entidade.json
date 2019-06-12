@@ -1,0 +1,55 @@
+﻿{
+    "nomeTabela": "FI_CONTRATO_EMPRESTIMO",
+    "colunasExtras": [
+        {
+            "nome": "NO_PESSOA",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "NR_CPF",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "NO_EMPRESA",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "NR_REGISTRO",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "DS_PLANO_PREVIDENCIAL",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "DS_NATUREZA",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "DS_SITUACAO",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "DS_MOT_QUITACAO",
+            "tipo": "string",
+            "aceitaNulo": false
+        },
+        {
+            "nome": "VL_IOF",
+            "tipo": "decimal",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "Prestacoes",
+            "tipo": "List<HistSaldoContratoEntidade>",
+            "aceitaNulo": false
+        }
+    ]
+}

@@ -9,6 +9,8 @@
     <Import_RootNamespace>Intech.PrevSystemWeb.Dados</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Scripts\ContratoEmprestimo\BuscarPorSqContrato.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\ContratoEmprestimo\BuscarPorCdPessoa.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\BuscarPensionistaPorCdPessoa.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\BuscarPorCdPessoa.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\BuscarPensionistaTodosPorCdPessoa.sql" />
@@ -18,11 +20,13 @@
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarDataPrimeiraContribuicao.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarDataUltimaContribuicao.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarPorContratoPlanoFundo.sql" />
-    <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarPorContratoPlanoReferencia.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarUltimaPorContratoPlano.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaFinancAssistido\BuscarDatasPorProcesso.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaFinancAssistido\BuscarPorProcessoReferencia.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaFinancAssistido\BuscarUltimaPorProcesso.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaSalarioContribuicao\BuscarUltimoPorContratoPlano.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\HistEncargoContrato\BuscarPorSqContrato.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\HistSaldoContrato\BuscarPorSqContrato.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Indice\BuscarPorCdIndice.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Indice\BuscarPorCdIndicePeriodo.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Indice\BuscarUltimoPorCdIndice.sql" />
@@ -45,11 +49,14 @@
     <None Include="$(MSBuildThisFileDirectory)Scripts\Usuario\Inserir.sql" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\ContratoEmprestimo\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\Dependente\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\FichaFinancAssistido\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\FichaSalarioContribuicao\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\HistEncargoContrato\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\HistSaldoContrato\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\Indice\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\IRRFFaixaCalculo\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\IRRFFaixaRegressivo\entidade.json" />
@@ -62,11 +69,14 @@
     <Content Include="$(MSBuildThisFileDirectory)Scripts\Usuario\entidade.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\ContratoEmprestimoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\DadosPessoaisDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\DependenteDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\FichaContribPrevidencialDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\FichaFinancAssistidoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\FichaSalarioContribuicaoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\HistEncargoContratoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\HistSaldoContratoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\IndiceDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\IRRFDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\IRRFFaixaCalculoDAO.cs" />

@@ -23,8 +23,8 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 
             total.DS_TIPO_FUNDO = "TOTAL";
 
-            listaSaldos.Add(saldoPatronal);
             listaSaldos.Add(saldoIndividual);
+            listaSaldos.Add(saldoPatronal);
             listaSaldos.Add(total);
 
             return listaSaldos;

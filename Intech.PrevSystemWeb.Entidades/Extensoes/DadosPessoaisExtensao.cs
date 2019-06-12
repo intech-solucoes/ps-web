@@ -1,7 +1,7 @@
 ﻿using Intech.Lib.Util.Date;
-using System;
+using Intech.PrevSystemWeb.Entidades;
 
-namespace Intech.PrevSystemWeb.Entidades.Extensoes
+namespace System
 {
     public static class DadosPessoaisExtensao
     {
