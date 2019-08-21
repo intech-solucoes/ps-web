@@ -18,7 +18,7 @@ namespace Intech.PrevSystemWeb.Dados.DAO
 			try
 			{
 				if(AppSettings.IS_SQL_SERVER_PROVIDER)
-					return Conexao.Query<IndiceEntidade>("SELECT *  FROM FI_INDICE_VALORES WHERE CD_INDICE = @CD_INDICE   AND EE_REAL = 'S' ORDER BY DT_INIC_VALIDADE DESC", new { CD_INDICE });
+					return Conexao.Query<IndiceEntidade>("SELECT *   FROM FI_INDICE_VALORES  WHERE CD_INDICE = @CD_INDICE    AND EE_REAL = 'S'  ORDER BY DT_INIC_VALIDADE DESC", new { CD_INDICE });
 				else if(AppSettings.IS_ORACLE_PROVIDER)
 					return Conexao.Query<IndiceEntidade>("SELECT * FROM FI_INDICE_VALORES WHERE CD_INDICE=:CD_INDICE AND EE_REAL='S' ORDER BY DT_INIC_VALIDADE DESC", new { CD_INDICE });
 				else
@@ -35,7 +35,7 @@ namespace Intech.PrevSystemWeb.Dados.DAO
 			try
 			{
 				if(AppSettings.IS_SQL_SERVER_PROVIDER)
-					return Conexao.Query<IndiceEntidade>("SELECT *  FROM FI_INDICE_VALORES WHERE CD_INDICE = @CD_INDICE   and DT_INIC_VALIDADE >= @DT_INI   and DT_INIC_VALIDADE <= @DT_FIM ORDER BY DT_INIC_VALIDADE DESC", new { CD_INDICE, DT_INI, DT_FIM });
+					return Conexao.Query<IndiceEntidade>("SELECT *   FROM FI_INDICE_VALORES  WHERE CD_INDICE = @CD_INDICE    and DT_INIC_VALIDADE >= @DT_INI    and DT_INIC_VALIDADE <= @DT_FIM  ORDER BY DT_INIC_VALIDADE DESC", new { CD_INDICE, DT_INI, DT_FIM });
 				else if(AppSettings.IS_ORACLE_PROVIDER)
 					return Conexao.Query<IndiceEntidade>("SELECT * FROM FI_INDICE_VALORES WHERE CD_INDICE=:CD_INDICE AND DT_INIC_VALIDADE>=:DT_INI AND DT_INIC_VALIDADE<=:DT_FIM ORDER BY DT_INIC_VALIDADE DESC", new { CD_INDICE, DT_INI, DT_FIM });
 				else
@@ -52,7 +52,7 @@ namespace Intech.PrevSystemWeb.Dados.DAO
 			try
 			{
 				if(AppSettings.IS_SQL_SERVER_PROVIDER)
-					return Conexao.QuerySingleOrDefault<IndiceEntidade>("SELECT TOP 1 *  FROM FI_INDICE_VALORES WHERE CD_INDICE = @CD_INDICE ORDER BY DT_INIC_VALIDADE DESC", new { CD_INDICE });
+					return Conexao.QuerySingleOrDefault<IndiceEntidade>("SELECT TOP 1 *   FROM FI_INDICE_VALORES  WHERE CD_INDICE = @CD_INDICE  ORDER BY DT_INIC_VALIDADE DESC", new { CD_INDICE });
 				else if(AppSettings.IS_ORACLE_PROVIDER)
 					return Conexao.QuerySingleOrDefault<IndiceEntidade>("SELECT * FROM FI_INDICE_VALORES WHERE CD_INDICE=:CD_INDICE AND ROWNUM <= 1  ORDER BY DT_INIC_VALIDADE DESC", new { CD_INDICE });
 				else

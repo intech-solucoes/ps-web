@@ -18,7 +18,7 @@ namespace Intech.PrevSystemWeb.Dados.DAO
 			try
 			{
 				if(AppSettings.IS_SQL_SERVER_PROVIDER)
-					return Conexao.QuerySingleOrDefault<UsuarioGrupoEntidade>("SELECT * FROM FR_USUARIO_GRUPO WHERE USR_CODIGO = @USR_CODIGO", new { USR_CODIGO });
+					return Conexao.QuerySingleOrDefault<UsuarioGrupoEntidade>("SELECT * FROM FR_USUARIO_GRUPO  WHERE USR_CODIGO = @USR_CODIGO", new { USR_CODIGO });
 				else if(AppSettings.IS_ORACLE_PROVIDER)
 					return Conexao.QuerySingleOrDefault<UsuarioGrupoEntidade>("SELECT * FROM FR_USUARIO_GRUPO WHERE USR_CODIGO=:USR_CODIGO", new { USR_CODIGO });
 				else

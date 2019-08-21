@@ -18,7 +18,7 @@ namespace Intech.PrevSystemWeb.Dados.DAO
 			try
 			{
 				if(AppSettings.IS_SQL_SERVER_PROVIDER)
-					return Conexao.QuerySingleOrDefault<PlanoPrevidencialEntidade>("SELECT * FROM FI_PLANO_PREVIDENCIAL WHERE SQ_PLANO_PREVIDENCIAL = @SQ_PLANO_PREVIDENCIAL", new { SQ_PLANO_PREVIDENCIAL });
+					return Conexao.QuerySingleOrDefault<PlanoPrevidencialEntidade>("SELECT *  FROM FI_PLANO_PREVIDENCIAL  WHERE SQ_PLANO_PREVIDENCIAL = @SQ_PLANO_PREVIDENCIAL", new { SQ_PLANO_PREVIDENCIAL });
 				else if(AppSettings.IS_ORACLE_PROVIDER)
 					return Conexao.QuerySingleOrDefault<PlanoPrevidencialEntidade>("SELECT * FROM FI_PLANO_PREVIDENCIAL WHERE SQ_PLANO_PREVIDENCIAL=:SQ_PLANO_PREVIDENCIAL", new { SQ_PLANO_PREVIDENCIAL });
 				else

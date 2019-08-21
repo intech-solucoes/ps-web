@@ -17,6 +17,7 @@
     <None Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\BuscarTodosPorCdPessoa.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Dependente\BuscarDependentePorContratoDtValidadeIRRF.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Dependente\BuscarDependentePorContratoDtValidadeTipo.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\Dependente\BuscarPorContratoTrabalho.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarDataPrimeiraContribuicao.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarDataUltimaContribuicao.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarPorContratoPlanoFundo.sql" />
@@ -34,6 +35,7 @@
     <None Include="$(MSBuildThisFileDirectory)Scripts\IRRFFaixaRegressivo\BuscarUltima.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\IRRF\BuscarUltima.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\BuscarPorCPF.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\BuscarPorCpfOuNome.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoPrevidencial\BuscarPorPlano.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoVinculado\BuscarPorContratoTrabalhoPlano.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoVinculado\BuscarPorContratoTrabalho.sql" />

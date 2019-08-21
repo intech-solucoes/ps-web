@@ -24,6 +24,9 @@ namespace Intech.PrevSystemWeb.Entidades
 		public string EE_SALARIO_FAMILIA { get; set; }
 		public string EE_DESIGNADO { get; set; }
 		[Write(false)] public DateTime DT_NASCIMENTO { get; set; }
+		[Write(false)] public string NO_PESSOA { get; set; }
+		[Write(false)] public string NR_CPF { get; set; }
+		[Write(false)] public string DS_GRAU_PARENTESCO { get; set; }
         
     }
 }

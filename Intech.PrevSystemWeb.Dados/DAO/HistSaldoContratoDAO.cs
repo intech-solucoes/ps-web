@@ -18,7 +18,7 @@ namespace Intech.PrevSystemWeb.Dados.DAO
 			try
 			{
 				if(AppSettings.IS_SQL_SERVER_PROVIDER)
-					return Conexao.Query<HistSaldoContratoEntidade>("SELECT * FROM fi_hist_saldo_contrato WHERE SQ_CONTRATO = @SQ_CONTRATO ORDER BY DT_VENCIMENTO", new { SQ_CONTRATO });
+					return Conexao.Query<HistSaldoContratoEntidade>("SELECT *  FROM fi_hist_saldo_contrato  WHERE SQ_CONTRATO = @SQ_CONTRATO  ORDER BY DT_VENCIMENTO", new { SQ_CONTRATO });
 				else if(AppSettings.IS_ORACLE_PROVIDER)
 					return Conexao.Query<HistSaldoContratoEntidade>("SELECT * FROM FI_HIST_SALDO_CONTRATO WHERE SQ_CONTRATO=:SQ_CONTRATO ORDER BY DT_VENCIMENTO", new { SQ_CONTRATO });
 				else

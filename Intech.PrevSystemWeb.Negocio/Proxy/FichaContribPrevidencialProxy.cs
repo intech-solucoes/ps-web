@@ -1,6 +1,7 @@
 ﻿using Intech.PrevSystemWeb.Dados.DAO;
 using Intech.PrevSystemWeb.Entidades;
 using Intech.PrevSystemWeb.Entidades.Outras;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,12 +9,17 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 {
     public class FichaContribPrevidencialProxy : FichaContribPrevidencialDAO
     {
-        public List<SaldoEntidade> BuscarSaldoPorContratoPlano(int sqContratoTrabalho, int sqPlanoPrevidencial)
+        public List<SaldoEntidade> BuscarSaldoPorContratoPlano(int sqContratoTrabalho, int sqPlanoPrevidencial, int fundoPatronal, int fundoIndividual)
         {
-            var contribuicoesPatronais = base.BuscarPorContratoPlanoFundo(sqContratoTrabalho, sqPlanoPrevidencial, 1).ToList();
-            var contribuicoesIndividuais = base.BuscarPorContratoPlanoFundo(sqContratoTrabalho, sqPlanoPrevidencial, 2).ToList();
+            var contribuicoesPatronais = base.BuscarPorContratoPlanoFundo(sqContratoTrabalho, sqPlanoPrevidencial, fundoPatronal).ToList();
+            var contribuicoesIndividuais = base.BuscarPorContratoPlanoFundo(sqContratoTrabalho, sqPlanoPrevidencial, fundoIndividual).ToList();
 
-            var valorIndiceQuota = new IndiceProxy().BuscarUltimoPorCdIndice("QUOTA").VL_INDICE;
+            var plano = new PlanoPrevidencialProxy().BuscarPorPlano(sqPlanoPrevidencial);
+
+            if (string.IsNullOrEmpty(plano.CD_INDICE_VALORIZACAO))
+                throw new Exception("Índice cota não cadastrado");
+
+            var valorIndiceQuota = new IndiceProxy().BuscarUltimoPorCdIndice(plano.CD_INDICE_VALORIZACAO).VL_INDICE;
 
             var listaSaldos = new List<SaldoEntidade>();
 

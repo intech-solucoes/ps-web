@@ -18,7 +18,7 @@ namespace Intech.PrevSystemWeb.Dados.DAO
 			try
 			{
 				if(AppSettings.IS_SQL_SERVER_PROVIDER)
-					return Conexao.Query<IRRFFaixaCalculoEntidade>("SELECT * FROM FI_IRRF_FAIXA_CALCULO WHERE DT_INIC_VALIDADE = (SELECT MAX(DT_INIC_VALIDADE) FROM FI_IRRF_FAIXA_CALCULO)", new {  });
+					return Conexao.Query<IRRFFaixaCalculoEntidade>("SELECT * FROM FI_IRRF_FAIXA_CALCULO  WHERE DT_INIC_VALIDADE = (SELECT MAX(DT_INIC_VALIDADE) FROM FI_IRRF_FAIXA_CALCULO)", new {  });
 				else if(AppSettings.IS_ORACLE_PROVIDER)
 					return Conexao.Query<IRRFFaixaCalculoEntidade>("SELECT * FROM FI_IRRF_FAIXA_CALCULO WHERE DT_INIC_VALIDADE=(SELECT MAX(DT_INIC_VALIDADE) FROM FI_IRRF_FAIXA_CALCULO)", new {  });
 				else

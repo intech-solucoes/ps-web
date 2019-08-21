@@ -5,6 +5,21 @@
             "nome": "DT_NASCIMENTO",
             "tipo": "DateTime",
             "aceitaNulo": false
+        },
+        {
+            "nome": "NO_PESSOA",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "NR_CPF",
+            "tipo": "string",
+            "aceitaNulo": true
+        },
+        {
+            "nome": "DS_GRAU_PARENTESCO",
+            "tipo": "string",
+            "aceitaNulo": true
         }
     ]
 }

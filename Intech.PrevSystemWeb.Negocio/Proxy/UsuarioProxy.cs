@@ -1,13 +1,12 @@
 ﻿#region Usings
 using Intech.Lib.Dominios;
-using Intech.Lib.Util.Email;
-using Intech.Lib.Util.Seguranca;
+using Intech.Lib.Email;
 using Intech.Lib.Web;
 using Intech.PrevSystemWeb.Dados.DAO;
 using Intech.PrevSystemWeb.Entidades;
 using System;
 using System.Security.Cryptography;
-using System.Text; 
+using System.Text;
 #endregion
 
 namespace Intech.PrevSystemWeb.Negocio.Proxy
