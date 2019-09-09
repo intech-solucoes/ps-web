@@ -8,7 +8,7 @@ namespace Intech.PrevSystemWeb.Entidades
         public string Senha { get; set; }
         public DateTime DataNascimento { get; set; }
         public string Chave { get; set; }
-        public string SenhaAntiga { get; set; }
+        public string SenhaAtual { get; set; }
         public string SenhaNova { get; set; }
     }
 }
