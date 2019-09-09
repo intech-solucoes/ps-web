@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Reflection; 
 #endregion
 
-namespace Intech.PrevSystemWeb.Cageprev.Api.Controllers
+namespace Intech.PrevSystemWeb.Api
 {
     public class BaseVersaoController : BaseController
     {
