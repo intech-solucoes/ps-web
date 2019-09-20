@@ -9,6 +9,7 @@
     <Import_RootNamespace>Intech.PrevSystemWeb.Dados</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Scripts\Cargo\BuscarPorCdPessoaPart.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\ContratoEmprestimo\BuscarPorSqContrato.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\ContratoEmprestimo\BuscarPorCdPessoa.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\BuscarPensionistaPorCdPessoa.sql" />
@@ -34,6 +35,8 @@
     <None Include="$(MSBuildThisFileDirectory)Scripts\IRRFFaixaCalculo\BuscarUltima.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\IRRFFaixaRegressivo\BuscarUltima.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\IRRF\BuscarUltima.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\OpcaoTributacao\BuscarTodas.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\Patrocinadora\BuscarTodas.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\BuscarPorCPF.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\BuscarPorCpfOuNome.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoPrevidencial\BuscarPorPlano.sql" />
@@ -51,42 +54,60 @@
     <None Include="$(MSBuildThisFileDirectory)Scripts\Usuario\Inserir.sql" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\Banco\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\Cargo\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\ContratoEmprestimo\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\DadosPessoais\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\Dependente\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\EstadoCivil\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\FichaFinancAssistido\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\FichaSalarioContribuicao\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\GrauParentesco\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\HistEncargoContrato\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\HistSaldoContrato\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\Indice\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\IRRFFaixaCalculo\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\IRRFFaixaRegressivo\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\IRRF\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\ListaSexo\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\Nacionalidade\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\OpcaoTributacao\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\Patrocinadora\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\PlanoPrevidencial\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\PlanoVinculado\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\ProcessoBeneficio\entidade.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Scripts\UF\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\UsuarioGrupo\entidade.json" />
     <Content Include="$(MSBuildThisFileDirectory)Scripts\Usuario\entidade.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\BancoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\CargoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\ContratoEmprestimoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\DadosPessoaisDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\DependenteDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\EstadoCivilDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\FichaContribPrevidencialDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\FichaFinancAssistidoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\FichaSalarioContribuicaoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\GrauParentescoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\HistEncargoContratoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\HistSaldoContratoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\IndiceDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\IRRFDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\IRRFFaixaCalculoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\IRRFFaixaRegressivoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\ListaSexoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\NacionalidadeDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\OpcaoTributacaoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\PatrocinadoraDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\PessoaFisicaDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\PlanoPrevidencialDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\PlanoVinculadoDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\ProcessoBeneficioDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAO\UFDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\UsuarioDAO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DAO\UsuarioGrupoDAO.cs" />
   </ItemGroup>

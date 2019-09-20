@@ -11,22 +11,31 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Calculos\IRRF\BaseCalculoIRRF.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Calculos\IRRF\CalculoIRRFProgressivo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\BancoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\CargoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\ContratoEmprestimoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\DadosPessoaisProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\DependenteProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\EstadoCivilProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\FichaContribPrevidencialProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\FichaFinancAssistidoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\FichaSalarioContribuicaoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\GrauParentescoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\HistEncargoContratoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\HistSaldoContratoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\IndiceProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\IRRFFaixaCalculoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\IRRFFaixaRegressivoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\IRRFProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\ListaSexoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\NacionalidadeProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\OpcaoTributacaoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\PatrocinadoraProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\PessoaFisicaProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\PlanoPrevidencialProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\PlanoVinculadoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\ProcessoBeneficioProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\UFProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\UsuarioGrupoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\UsuarioProxy.cs" />
   </ItemGroup>

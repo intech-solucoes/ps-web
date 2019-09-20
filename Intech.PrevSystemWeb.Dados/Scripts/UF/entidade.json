@@ -1,0 +1,6 @@
+{
+  "NomeTabela": "fi_uf",
+  "ChavePrimaria": "CD_UF",
+  "ColunasExtras": [],
+  "Imports": []
+}
