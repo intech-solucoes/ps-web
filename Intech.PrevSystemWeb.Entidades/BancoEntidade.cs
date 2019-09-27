@@ -12,6 +12,7 @@ namespace Intech.PrevSystemWeb.Entidades
 		public string NO_BANCO { get; set; }
 		public string IMG_BANCO { get; set; }
 		public string CD_COMPENSACAO { get; set; }
+		public string NO_SIGLA { get; set; }
         
     }
 }

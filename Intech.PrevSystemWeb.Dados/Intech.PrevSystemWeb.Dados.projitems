@@ -9,6 +9,7 @@
     <Import_RootNamespace>Intech.PrevSystemWeb.Dados</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Scripts\Banco\BuscarOrdemAlfabetica.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Cargo\BuscarPorCdPessoaPart.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\ContratoEmprestimo\BuscarPorSqContrato.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\ContratoEmprestimo\BuscarPorCdPessoa.sql" />
@@ -19,6 +20,7 @@
     <None Include="$(MSBuildThisFileDirectory)Scripts\Dependente\BuscarDependentePorContratoDtValidadeIRRF.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Dependente\BuscarDependentePorContratoDtValidadeTipo.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Dependente\BuscarPorContratoTrabalho.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\EstadoCivil\BuscarOrdemAlfabetica.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarDataPrimeiraContribuicao.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarDataUltimaContribuicao.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\FichaContribPrevidencial\BuscarPorContratoPlanoFundo.sql" />
