@@ -1,35 +1,41 @@
-﻿{
-    "nomeTabela": "FI_PLANO_VINCULADO",
-    "colunasExtras": [
-        {
-            "nome": "DS_PLANO_PREVIDENCIAL",
-            "tipo": "string",
-            "aceitaNulo": false
-        },
-        {
-            "nome": "DS_SIT_PLANO",
-            "tipo": "string",
-            "aceitaNulo": false
-        },
-        {
-            "nome": "DS_SIT_INSCRICAO",
-            "tipo": "string",
-            "aceitaNulo": false
-        },
-        {
-            "nome": "DS_MOT_SIT_PLANO",
-            "tipo": "string",
-            "aceitaNulo": false
-        },
-        {
-            "nome": "NR_CODIGO_CNPB",
-            "tipo": "string",
-            "aceitaNulo": true
-        },
-        {
-            "nome": "CD_INDICE_VALORIZACAO",
-            "tipo": "string",
-            "aceitaNulo": true
-        }
-    ]
+{
+  "NomeTabela": "FI_PLANO_VINCULADO",
+  "ColunasExtras": [
+    {
+      "Nome": "DS_PLANO_PREVIDENCIAL",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "DS_SIT_PLANO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "DS_SIT_INSCRICAO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "DS_MOT_SIT_PLANO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "NR_CODIGO_CNPB",
+      "Tipo": "string",
+      "AceitaNulo": true
+    },
+    {
+      "Nome": "CD_INDICE_VALORIZACAO",
+      "Tipo": "string",
+      "AceitaNulo": true
+    },
+    {
+      "Nome": "DS_OPCAO_TRIBUTACAO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    }
+  ],
+  "Imports": []
 }

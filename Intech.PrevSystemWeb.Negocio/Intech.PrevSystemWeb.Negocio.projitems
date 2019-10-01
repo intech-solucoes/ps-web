@@ -11,12 +11,17 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Calculos\IRRF\BaseCalculoIRRF.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Calculos\IRRF\CalculoIRRFProgressivo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\ArquivoUploadProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\BancoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\CargoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\ContratoEmprestimoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\ContratoTrabalhoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\DadosPessoaisProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\DependenteProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\EstadoCivilProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\DocumentoPastaProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\DocumentoPlanoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\DocumentoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\FichaContribPrevidencialProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\FichaFinancAssistidoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\FichaSalarioContribuicaoProxy.cs" />
