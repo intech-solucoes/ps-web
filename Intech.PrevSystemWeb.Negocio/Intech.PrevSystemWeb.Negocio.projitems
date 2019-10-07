@@ -14,6 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\ArquivoUploadProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\BancoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\CargoProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Proxy\ComprovanteRendimentosProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\ContratoEmprestimoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\ContratoTrabalhoProxy.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Proxy\DadosPessoaisProxy.cs" />
