@@ -51,7 +51,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 
             var pensionista = false;
 
-            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCPF(cpf).FirstOrDefault();
+            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCpfComContrato(cpf).FirstOrDefault();
 
             if (pessoaFisica == null)
                 throw ExceptionDadosInvalidos;
@@ -129,7 +129,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 
             var pensionista = false;
 
-            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCPF(cpf).FirstOrDefault();
+            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCpfComContrato(cpf).FirstOrDefault();
 
             if (pessoaFisica == null)
                 throw ExceptionDadosInvalidos;

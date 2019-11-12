@@ -1,10 +1,16 @@
-﻿{
-    "nomeTabela": "FI_PESSOA_FISICA",
-    "colunasExtras": [
-        {
-            "nome": "NO_PESSOA",
-            "tipo": "string",
-            "aceitaNulo": true
-        }
-    ]
+{
+  "NomeTabela": "FI_PESSOA_FISICA",
+  "ColunasExtras": [
+    {
+      "Nome": "NO_PESSOA",
+      "Tipo": "string",
+      "AceitaNulo": true
+    },
+    {
+      "Nome": "NR_REGISTRO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    }
+  ],
+  "Imports": []
 }

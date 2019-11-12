@@ -72,8 +72,7 @@ FROM fi_contrato_trabalho CT
     LEFT OUTER JOIN fi_endereco_pessoa EP ON EP.CD_PESSOA = PF.CD_PESSOA
         AND EP.SQ_ENDERECO = (SELECT MAX(EP2.SQ_ENDERECO)
                                 FROM fi_endereco_pessoa EP2
-                                WHERE EP2.CD_PESSOA = PF.CD_PESSOA
-                                    AND EP2.IR_CORRESPONDENCIA = 'S')
+                                WHERE EP2.CD_PESSOA = PF.CD_PESSOA)
     LEFT OUTER JOIN fi_tipo_endereco TE ON TE.CD_TIPO_ENDERECO = EP.CD_TIPO_ENDERECO
     LEFT OUTER JOIN fi_municipio MU ON MU.CD_MUNICIPIO = EP.CD_MUNICIPIO
     LEFT OUTER JOIN fi_tipo_logradouro TL on TL.SQ_TIPO_LOGRADOURO = EP.SQ_TIPO_LOGRADOURO

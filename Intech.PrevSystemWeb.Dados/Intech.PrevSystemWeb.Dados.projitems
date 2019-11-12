@@ -49,7 +49,9 @@
     <None Include="$(MSBuildThisFileDirectory)Scripts\OpcaoTributacao\BuscarTodas.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\Patrocinadora\BuscarTodas.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\BuscarPorCPF.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\BuscarPorCpfComContrato.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\BuscarPorCpfOuNome.sql" />
+    <None Include="$(MSBuildThisFileDirectory)Scripts\PessoaFisica\BuscarPorPesquisa.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoPrevidencial\BuscarPorPlano.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoVinculado\BuscarPorContratoTrabalhoPlano.sql" />
     <None Include="$(MSBuildThisFileDirectory)Scripts\PlanoVinculado\BuscarPorContratoTrabalho.sql" />
