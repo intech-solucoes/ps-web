@@ -31,6 +31,7 @@ namespace Intech.PrevSystemWeb.Entidades
 		public DateTime? DT_OBITO { get; set; }
 		public decimal? VL_JOIA { get; set; }
 		public DateTime? DT_REINTEGRACAO { get; set; }
+		public string TXT_OBSERVACAO { get; set; }
 		[Write(false)] public string DS_PLANO_PREVIDENCIAL { get; set; }
 		[Write(false)] public string DS_SIT_PLANO { get; set; }
 		[Write(false)] public string DS_SIT_INSCRICAO { get; set; }

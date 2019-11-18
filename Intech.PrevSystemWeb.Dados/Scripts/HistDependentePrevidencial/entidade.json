@@ -1,0 +1,26 @@
+{
+  "NomeTabela": "FI_HIST_DEPENDENTE_PREVIDENCIAL",
+  "ColunasExtras": [
+    {
+      "Nome": "NO_PESSOA",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "DT_NASCIMENTO",
+      "Tipo": "DateTime",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "DS_GRAU_PARENTESCO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "NR_CPF",
+      "Tipo": "string",
+      "AceitaNulo": false
+    }
+  ],
+  "Imports": []
+}
