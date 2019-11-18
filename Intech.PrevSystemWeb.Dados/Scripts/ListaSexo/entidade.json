@@ -1,0 +1,6 @@
+{
+  "NomeTabela": "fi_sexo",
+  "ChavePrimaria": "IR_SEXO",
+  "ColunasExtras": [],
+  "Imports": []
+}

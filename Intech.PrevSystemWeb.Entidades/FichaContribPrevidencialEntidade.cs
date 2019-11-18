@@ -7,8 +7,6 @@ namespace Intech.PrevSystemWeb.Entidades
     [Table("FI_FICHA_CONTRIB_PREVIDENCIAL")]
     public class FichaContribPrevidencialEntidade
     {
-		[Key]
-		public int SQ_FICHA { get; set; }
 		public int SQ_PLANO_PREVIDENCIAL { get; set; }
 		public int SQ_CONTRATO_TRABALHO { get; set; }
 		public int SQ_TIPO_FUNDO { get; set; }

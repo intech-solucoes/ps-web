@@ -46,6 +46,7 @@ namespace Intech.PrevSystemWeb.Entidades
 		public int? SEQ_CONTRATO { get; set; }
 		public int? USR_CODIGO { get; set; }
 		public DateTime? DT_REQUERIMENTO { get; set; }
+		public int? SQ_MIGRACAO { get; set; }
 		[Write(false)] public string NO_PESSOA { get; set; }
 		[Write(false)] public string NR_CPF { get; set; }
 		[Write(false)] public string NO_EMPRESA { get; set; }

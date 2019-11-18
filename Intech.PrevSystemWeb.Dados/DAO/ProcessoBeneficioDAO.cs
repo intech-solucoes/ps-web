@@ -13,14 +13,14 @@ namespace Intech.PrevSystemWeb.Dados.DAO
     public abstract class ProcessoBeneficioDAO : BaseDAO<ProcessoBeneficioEntidade>
     {
         
-		public virtual ProcessoBeneficioEntidade BuscarPorCdPessoa(int CD_PESSOA)
+		public virtual IEnumerable<ProcessoBeneficioEntidade> BuscarPorCdPessoa(int CD_PESSOA)
 		{
 			try
 			{
 				if(AppSettings.IS_SQL_SERVER_PROVIDER)
-					return Conexao.QuerySingleOrDefault<ProcessoBeneficioEntidade>("SELECT * FROM FI_PROCESSO_BENEFICIO  INNER JOIN FI_RECEBEDOR_BENEFICIO ON FI_RECEBEDOR_BENEFICIO.SQ_PROCESSO = FI_PROCESSO_BENEFICIO.SQ_PROCESSO  WHERE FI_RECEBEDOR_BENEFICIO.CD_PESSOA_RECEB = @CD_PESSOA", new { CD_PESSOA });
+					return Conexao.Query<ProcessoBeneficioEntidade>("SELECT * FROM FI_PROCESSO_BENEFICIO  INNER JOIN FI_RECEBEDOR_BENEFICIO ON FI_RECEBEDOR_BENEFICIO.SQ_PROCESSO = FI_PROCESSO_BENEFICIO.SQ_PROCESSO  WHERE FI_RECEBEDOR_BENEFICIO.CD_PESSOA_RECEB = @CD_PESSOA", new { CD_PESSOA });
 				else if(AppSettings.IS_ORACLE_PROVIDER)
-					return Conexao.QuerySingleOrDefault<ProcessoBeneficioEntidade>("SELECT * FROM FI_PROCESSO_BENEFICIO INNER  JOIN FI_RECEBEDOR_BENEFICIO  ON FI_RECEBEDOR_BENEFICIO.SQ_PROCESSO=FI_PROCESSO_BENEFICIO.SQ_PROCESSO WHERE FI_RECEBEDOR_BENEFICIO.CD_PESSOA_RECEB=:CD_PESSOA", new { CD_PESSOA });
+					return Conexao.Query<ProcessoBeneficioEntidade>("SELECT * FROM FI_PROCESSO_BENEFICIO INNER  JOIN FI_RECEBEDOR_BENEFICIO  ON FI_RECEBEDOR_BENEFICIO.SQ_PROCESSO=FI_PROCESSO_BENEFICIO.SQ_PROCESSO WHERE FI_RECEBEDOR_BENEFICIO.CD_PESSOA_RECEB=:CD_PESSOA", new { CD_PESSOA });
 				else
 					throw new Exception("Provider não suportado!");
 			}

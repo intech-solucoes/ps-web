@@ -30,12 +30,15 @@ namespace Intech.PrevSystemWeb.Entidades
 		public int? QT_PRAZO_JOIA { get; set; }
 		public DateTime? DT_OBITO { get; set; }
 		public decimal? VL_JOIA { get; set; }
+		public DateTime? DT_REINTEGRACAO { get; set; }
+		public string TXT_OBSERVACAO { get; set; }
 		[Write(false)] public string DS_PLANO_PREVIDENCIAL { get; set; }
 		[Write(false)] public string DS_SIT_PLANO { get; set; }
 		[Write(false)] public string DS_SIT_INSCRICAO { get; set; }
 		[Write(false)] public string DS_MOT_SIT_PLANO { get; set; }
 		[Write(false)] public string NR_CODIGO_CNPB { get; set; }
 		[Write(false)] public string CD_INDICE_VALORIZACAO { get; set; }
+		[Write(false)] public string DS_OPCAO_TRIBUTACAO { get; set; }
         
     }
 }

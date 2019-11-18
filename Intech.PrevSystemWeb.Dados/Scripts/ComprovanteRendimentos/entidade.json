@@ -1,0 +1,51 @@
+{
+  "NomeTabela": "FI_COMPROVANTE_RENDIMENTOS",
+  "ColunasExtras": [
+    {
+      "Nome": "VL_COMPLEMENTAR",
+      "Tipo": "decimal",
+      "AceitaNulo": true
+    },
+    {
+      "Nome": "ANO_CALENDARIO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "ANO_EXERCICIO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "CD_RECEITA",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "DS_RECEITA",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "NR_ITEM_DECLARACAO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "DS_ITEM_DECLARACAO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "NR_POSICAO_COLUNA",
+      "Tipo": "int",
+      "AceitaNulo": false
+    },
+    {
+      "Nome": "DS_ANO_CALENDARIO",
+      "Tipo": "string",
+      "AceitaNulo": false
+    }
+  ],
+  "Imports": []
+}

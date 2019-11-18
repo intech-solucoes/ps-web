@@ -1,0 +1,11 @@
+{
+  "NomeTabela": "FI_PATROCINADORA",
+  "ColunasExtras": [
+    {
+      "Nome": "NO_PESSOA",
+      "Tipo": "string",
+      "AceitaNulo": false
+    }
+  ],
+  "Imports": []
+}

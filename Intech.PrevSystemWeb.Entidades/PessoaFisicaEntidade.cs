@@ -41,6 +41,7 @@ namespace Intech.PrevSystemWeb.Entidades
 		public string NR_PAIS_NACIONALIDADE { get; set; }
 		public string EE_US_PERSON { get; set; }
 		[Write(false)] public string NO_PESSOA { get; set; }
+		[Write(false)] public string NR_REGISTRO { get; set; }
         
     }
 }

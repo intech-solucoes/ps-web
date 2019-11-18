@@ -4,7 +4,6 @@
         -FichaFinancAssistidoEntidade
     Parametros
         -SQ_PROCESSO:int
-        -DT_REFERENCIA:DateTime
 */
 
 SELECT DISTINCT CR.DT_REFERENCIA,
@@ -15,5 +14,4 @@ FROM fi_ficha_financ_assistido FF
 WHERE FF.SQ_PROCESSO = @SQ_PROCESSO
   AND RU.IR_LANCAMENTO IN ('P', 'D')
   AND RU.EE_INCIDE_LIQUIDO = 'S'
-  AND CR.DT_REFERENCIA >= @DT_REFERENCIA
 ORDER BY CR.DT_REFERENCIA DESC

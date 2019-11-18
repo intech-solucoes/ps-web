@@ -1,0 +1,10 @@
+﻿{
+    "nomeTabela": "WEB_DOCUMENTO",
+    "colunasExtras": [
+        {
+            "nome": "SQ_PLANO_PREVIDENCIAL",
+            "tipo": "int",
+            "aceitaNulo": true
+        }
+    ]
+}

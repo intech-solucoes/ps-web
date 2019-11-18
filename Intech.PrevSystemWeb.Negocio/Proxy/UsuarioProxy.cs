@@ -5,6 +5,7 @@ using Intech.Lib.Web;
 using Intech.PrevSystemWeb.Dados.DAO;
 using Intech.PrevSystemWeb.Entidades;
 using System;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 #endregion
@@ -50,7 +51,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 
             var pensionista = false;
 
-            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCPF(cpf);
+            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCpfComContrato(cpf).FirstOrDefault();
 
             if (pessoaFisica == null)
                 throw ExceptionDadosInvalidos;
@@ -116,7 +117,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 
             // Envia e-mail com nova senha de acesso
             var emailConfig = AppSettings.Get().Email;
-            EnvioEmail.EnviarMailKit(emailConfig, dadosPessoais.NO_EMAIL, $"Cageprev - Nova senha de acesso", $"Esta é sua nova senha da Cageprev: {senha}");
+            EnvioEmail.Enviar(emailConfig, dadosPessoais.NO_EMAIL, $"CuritibaPrev - Nova senha de acesso", $"Esta é sua nova senha da CuritibaPrev: {senha}");
 
             return "Sua nova senha foi enviada para seu e-mail!";
         }
@@ -128,7 +129,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 
             var pensionista = false;
 
-            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCPF(cpf);
+            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCpfComContrato(cpf).FirstOrDefault();
 
             if (pessoaFisica == null)
                 throw ExceptionDadosInvalidos;
