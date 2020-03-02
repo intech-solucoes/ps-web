@@ -33,6 +33,8 @@ namespace Intech.PrevSystemWeb.Entidades
 		public int? SQ_CATEGORIA_TRABALHADOR { get; set; }
 		public int? IR_TIPO_CONTRATO { get; set; }
 		public int? IR_EXPOSICAO_AGENTE_NOCIVO { get; set; }
+		public int? SQ_MIGRACAO { get; set; }
+		public string TXT_OBSERVACAO { get; set; }
 		[Write(false)] public string NO_PESSOA { get; set; }
 		[Write(false)] public string IR_SEXO { get; set; }
 		[Write(false)] public string DS_SEXO { get; set; }

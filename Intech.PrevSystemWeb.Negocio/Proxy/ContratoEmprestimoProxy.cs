@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿#region Usings
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using Intech.PrevSystemWeb.Dados.DAO;
-using Intech.PrevSystemWeb.Entidades;
+using Intech.PrevSystemWeb.Entidades; 
+#endregion
 
 namespace Intech.PrevSystemWeb.Negocio.Proxy
 {
@@ -13,7 +16,11 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 
             foreach(var contrato in contratos)
             {
-                contrato.VL_IOF = new HistEncargoContratoProxy().BuscarPorSqContrato(contrato.SQ_CONTRATO).VL_ENCARGO.Value;
+                var encargos = new HistEncargoContratoProxy().BuscarPorSqContrato(contrato.SQ_CONTRATO);
+                if (encargos == null)
+                    contrato.VL_IOF = 0;
+                else
+                    contrato.VL_IOF = encargos.VL_ENCARGO.Value;
             }
 
             return contratos;
@@ -23,7 +30,12 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
         {
             var contrato = base.BuscarPorSqContrato(SQ_CONTRATO);
 
-            contrato.VL_IOF = new HistEncargoContratoProxy().BuscarPorSqContrato(contrato.SQ_CONTRATO).VL_ENCARGO.Value;
+            var encargos = new HistEncargoContratoProxy().BuscarPorSqContrato(contrato.SQ_CONTRATO);
+            if (encargos == null)
+                contrato.VL_IOF = 0;
+            else
+                contrato.VL_IOF = encargos.VL_ENCARGO.Value;
+
             contrato.Prestacoes = new HistSaldoContratoProxy().BuscarPorSqContrato(contrato.SQ_CONTRATO).ToList();
 
             return contrato;

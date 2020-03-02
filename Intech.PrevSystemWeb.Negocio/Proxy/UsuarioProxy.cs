@@ -1,6 +1,7 @@
 ﻿#region Usings
 using Intech.Lib.Dominios;
 using Intech.Lib.Email;
+using Intech.Lib.Util.Validacoes;
 using Intech.Lib.Web;
 using Intech.PrevSystemWeb.Dados.DAO;
 using Intech.PrevSystemWeb.Entidades;
@@ -64,7 +65,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
             if (dadosPessoais == null)
             {
                 pensionista = true;
-                dadosPessoais = new DadosPessoaisProxy().BuscarPensionistaTodosPorCdPessoa(pessoaFisica.CD_PESSOA);
+                dadosPessoais = new DadosPessoaisProxy().BuscarPensionistaTodosPorCdPessoa(pessoaFisica.CD_PESSOA).First();
             }
 
             var senha = new Random().Next(999999).ToString();
@@ -116,8 +117,98 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
             }
 
             // Envia e-mail com nova senha de acesso
-            var emailConfig = AppSettings.Get().Email;
-            EnvioEmail.Enviar(emailConfig, dadosPessoais.NO_EMAIL, $"CuritibaPrev - Nova senha de acesso", $"Esta é sua nova senha da CuritibaPrev: {senha}");
+            var config = AppSettings.Get();
+            
+            EnvioEmail.Enviar(config.Email, dadosPessoais.NO_EMAIL, $"{config.Cliente} - Nova senha de acesso", $"Esta é sua nova senha da {config.Cliente}: {senha}");
+
+            return "Sua nova senha foi enviada para seu e-mail!";
+        }
+
+        public string CriarAcessoComEmail(string cpf, DateTime dataNascimento, string email)
+        {
+            cpf = cpf.LimparMascara();
+
+            if (!Validador.ValidarEmail(email))
+                throw new Exception("E-mail em formato inválido.");
+
+            var pensionista = false;
+
+            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCpfComContrato(cpf).FirstOrDefault();
+
+            if (pessoaFisica == null)
+                throw ExceptionDadosInvalidos;
+
+            if (pessoaFisica.DT_NASCIMENTO != dataNascimento)
+                throw ExceptionDadosInvalidos;
+
+            var dadosPessoais = new DadosPessoaisProxy().BuscarPorCdPessoa(pessoaFisica.CD_PESSOA);
+
+            if (dadosPessoais == null)
+            {
+                pensionista = true;
+                dadosPessoais = new DadosPessoaisProxy().BuscarPensionistaTodosPorCdPessoa(pessoaFisica.CD_PESSOA).First();
+            }
+
+            if (!string.IsNullOrEmpty(dadosPessoais.NO_EMAIL) && email != dadosPessoais.NO_EMAIL)
+                throw new Exception("O e-mail digitado não coincide com o e-mail registrado em nosso cadastro. Favor entrar em contato com a EqtPrev.");
+
+            var senha = new Random().Next(999999).ToString();
+
+            // Verifica se existe usuário. Caso sim, atualiza a senha. Caso não, cria novo usuário.
+            var usuarioExistente = BuscarPorCPF(cpf);
+
+            if (usuarioExistente != null)
+            {
+                var senhaEncriptada = GerarHashMd5(usuarioExistente.USR_CODIGO + senha);
+
+                Atualizar(USR_CODIGO: usuarioExistente.USR_CODIGO,
+                    USR_LOGIN: cpf,
+                    USR_SENHA: senhaEncriptada,
+                    USR_ADMINISTRADOR: DMN_SN.NAO,
+                    USR_TIPO_EXPIRACAO: DMN_SN.NAO,
+                    USR_NOME: pessoaFisica.NO_PESSOA,
+                    USR_EMAIL: dadosPessoais.NO_EMAIL,
+                    CD_PESSOA: pessoaFisica.CD_PESSOA,
+                    EE_TERMO_RESPONSABILIDADE: DMN_SN.SIM,
+                    CD_PESSOA_CLIENTE: 1);
+            }
+            else
+            {
+                var proximoCodigo = BuscarProximoCodigo();
+
+                var senhaEncriptada = GerarHashMd5(proximoCodigo + senha);
+
+                Inserir(USR_CODIGO: proximoCodigo,
+                    USR_LOGIN: cpf,
+                    USR_SENHA: senhaEncriptada,
+                    USR_ADMINISTRADOR: DMN_SN.NAO,
+                    USR_TIPO_EXPIRACAO: DMN_SN.NAO,
+                    USR_NOME: pessoaFisica.NO_PESSOA,
+                    USR_EMAIL: dadosPessoais.NO_EMAIL,
+                    CD_PESSOA: pessoaFisica.CD_PESSOA,
+                    EE_TERMO_RESPONSABILIDADE: DMN_SN.SIM,
+                    CD_PESSOA_CLIENTE: 1);
+
+                if (pensionista)
+                {
+                    new UsuarioGrupoProxy().Inserir(new UsuarioGrupoEntidade
+                    {
+                        GRP_CODIGO = 32,
+                        SIS_CODIGO = "PWA",
+                        USR_CODIGO = proximoCodigo
+                    });
+                }
+            }
+
+            // Envia e-mail com nova senha de acesso
+            var config = AppSettings.Get();
+
+            EnvioEmail.Enviar(config.Email, email, $"{config.Cliente} - Nova senha de acesso", $"Esta é sua nova senha da {config.Cliente}: {senha}");
+
+            if(string.IsNullOrEmpty(dadosPessoais.NO_EMAIL))
+            {
+                new EnderecoPessoaProxy().AtualizarEmailPorCdPessoa(dadosPessoais.CD_PESSOA, email);
+            }
 
             return "Sua nova senha foi enviada para seu e-mail!";
         }
@@ -139,7 +230,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
             if (dadosPessoais == null)
             {
                 pensionista = true;
-                dadosPessoais = new DadosPessoaisProxy().BuscarPensionistaTodosPorCdPessoa(pessoaFisica.CD_PESSOA);
+                dadosPessoais = new DadosPessoaisProxy().BuscarPensionistaTodosPorCdPessoa(pessoaFisica.CD_PESSOA).First();
             }
 
             // Verifica se existe usuário. Caso sim, atualiza a senha. Caso não, cria novo usuário.

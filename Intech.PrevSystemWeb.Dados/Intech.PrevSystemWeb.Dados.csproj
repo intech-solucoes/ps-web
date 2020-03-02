@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Intech.Lib.Dapper" Version="1.1.1" />
+    <PackageReference Include="Intech.Lib.Web" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Intech.Lib\Intech.Lib.Dapper\Intech.Lib.Dapper.csproj" />
     <ProjectReference Include="..\Intech.PrevSystemWeb.Entidades\Intech.PrevSystemWeb.Entidades.csproj" />
   </ItemGroup>
 
