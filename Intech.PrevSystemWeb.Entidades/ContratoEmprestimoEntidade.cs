@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_CONTRATO_EMPRESTIMO")]
-    public class ContratoEmprestimoEntidade
-    {
+	[Table("FI_CONTRATO_EMPRESTIMO")]
+	public class ContratoEmprestimoEntidade
+	{
 		[Key]
 		public int SQ_CONTRATO { get; set; }
 		public int? CD_PESSOA { get; set; }
@@ -46,7 +46,8 @@ namespace Intech.PrevSystemWeb.Entidades
 		public int? SEQ_CONTRATO { get; set; }
 		public int? USR_CODIGO { get; set; }
 		public DateTime? DT_REQUERIMENTO { get; set; }
-		public int? SQ_MIGRACAO { get; set; }
+		public int? QT_PARCELA_AMORT { get; set; }
+		public DateTime? DT_REPACTUACAO { get; set; }
 		[Write(false)] public string NO_PESSOA { get; set; }
 		[Write(false)] public string NR_CPF { get; set; }
 		[Write(false)] public string NO_EMPRESA { get; set; }
@@ -57,6 +58,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		[Write(false)] public string DS_MOT_QUITACAO { get; set; }
 		[Write(false)] public decimal? VL_IOF { get; set; }
 		[Write(false)] public List<HistSaldoContratoEntidade> Prestacoes { get; set; }
-        
-    }
+	}
 }

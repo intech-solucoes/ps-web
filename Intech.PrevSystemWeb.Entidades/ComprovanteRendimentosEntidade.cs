@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_COMPROVANTE_RENDIMENTOS")]
-    public class ComprovanteRendimentosEntidade
-    {
+	[Table("FI_COMPROVANTE_RENDIMENTOS")]
+	public class ComprovanteRendimentosEntidade
+	{
 		[Key]
 		public int SQ_DECLARACAO { get; set; }
 		public int? SQ_EXERCICIO { get; set; }
@@ -24,6 +24,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		[Write(false)] public string DS_ITEM_DECLARACAO { get; set; }
 		[Write(false)] public int NR_POSICAO_COLUNA { get; set; }
 		[Write(false)] public string DS_ANO_CALENDARIO { get; set; }
-        
-    }
+	}
 }

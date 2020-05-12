@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_RECEBEDOR_BENEFICIO")]
-    public class RecebedorBeneficioEntidade
-    {
+	[Table("FI_RECEBEDOR_BENEFICIO")]
+	public class RecebedorBeneficioEntidade
+	{
 		public int SQ_PROCESSO { get; set; }
 		public int CD_PESSOA_RECEB { get; set; }
 		public int? SQ_QUALIDADE { get; set; }
@@ -16,6 +16,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		public string IR_CONTRACHEQUE { get; set; }
 		public string NR_PROCESSO_INSS { get; set; }
 		public DateTime? DT_TERM_RGPS { get; set; }
-        
-    }
+	}
 }

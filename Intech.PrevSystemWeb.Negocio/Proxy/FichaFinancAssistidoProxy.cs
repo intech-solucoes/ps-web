@@ -12,7 +12,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 {
     public class FichaFinancAssistidoProxy : FichaFinancAssistidoDAO
     {
-        public override IEnumerable<FichaFinancAssistidoEntidade> BuscarDatasPorProcesso(int SQ_PROCESSO)
+        public override List<FichaFinancAssistidoEntidade> BuscarDatasPorProcesso(int SQ_PROCESSO)
         {
             var datas = base.BuscarDatasPorProcesso(SQ_PROCESSO).ToList();
 

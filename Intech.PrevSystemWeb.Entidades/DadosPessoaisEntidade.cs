@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_CONTRATO_TRABALHO")]
-    public class DadosPessoaisEntidade
-    {
+	[Table("FI_CONTRATO_TRABALHO")]
+	public class DadosPessoaisEntidade
+	{
 		[Key]
 		public int SQ_CONTRATO_TRABALHO { get; set; }
 		public int CD_PESSOA { get; set; }
@@ -33,8 +33,6 @@ namespace Intech.PrevSystemWeb.Entidades
 		public int? SQ_CATEGORIA_TRABALHADOR { get; set; }
 		public int? IR_TIPO_CONTRATO { get; set; }
 		public int? IR_EXPOSICAO_AGENTE_NOCIVO { get; set; }
-		public int? SQ_MIGRACAO { get; set; }
-		public string TXT_OBSERVACAO { get; set; }
 		[Write(false)] public string NO_PESSOA { get; set; }
 		[Write(false)] public string IR_SEXO { get; set; }
 		[Write(false)] public string DS_SEXO { get; set; }
@@ -75,6 +73,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		[Write(false)] public string CD_UF { get; set; }
 		[Write(false)] public int? SQ_TIPO_LOGRADOURO { get; set; }
 		[Write(false)] public string NO_TIPO_LOGRADOURO { get; set; }
-        
-    }
+	}
 }

@@ -7,7 +7,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 {
     public class DependenteProxy : DependenteDAO
     {
-        public override IEnumerable<DependenteEntidade> BuscarPorContratoTrabalho(int SQ_CONTRATO_TRABALHO)
+        public override List<DependenteEntidade> BuscarPorContratoTrabalho(int SQ_CONTRATO_TRABALHO)
         {
             var dependentes = base.BuscarPorContratoTrabalho(SQ_CONTRATO_TRABALHO);
 

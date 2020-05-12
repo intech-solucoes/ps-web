@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_PROCESSO_BENEFICIO")]
-    public class ProcessoBeneficioEntidade
-    {
+	[Table("FI_PROCESSO_BENEFICIO")]
+	public class ProcessoBeneficioEntidade
+	{
 		[Key]
 		public int SQ_PROCESSO { get; set; }
 		public int? SQ_PLANO_PREVIDENCIAL { get; set; }
@@ -37,6 +37,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		public decimal? VL_FATOR_ATUARIAL { get; set; }
 		[Write(false)] public string DS_ESPECIE { get; set; }
 		[Write(false)] public string DS_MOT_SITUACAO { get; set; }
-        
-    }
+	}
 }

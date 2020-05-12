@@ -10,7 +10,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 {
     public class ContratoEmprestimoProxy : ContratoEmprestimoDAO
     {
-        public override IEnumerable<ContratoEmprestimoEntidade> BuscarPorCdPessoa(int CD_PESSOA)
+        public override List<ContratoEmprestimoEntidade> BuscarPorCdPessoa(int CD_PESSOA)
         {
             var contratos = base.BuscarPorCdPessoa(CD_PESSOA);
 

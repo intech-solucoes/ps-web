@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_DEPENDENTE")]
-    public class DependenteEntidade
-    {
+	[Table("FI_DEPENDENTE")]
+	public class DependenteEntidade
+	{
 		[Key]
 		public int SQ_PESSOA_DEP { get; set; }
 		public int CD_PESSOA_DEP { get; set; }
@@ -27,6 +27,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		[Write(false)] public string NO_PESSOA { get; set; }
 		[Write(false)] public string NR_CPF { get; set; }
 		[Write(false)] public string DS_GRAU_PARENTESCO { get; set; }
-        
-    }
+	}
 }

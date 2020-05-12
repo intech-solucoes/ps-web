@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_FICHA_FINANC_ASSISTIDO")]
-    public class FichaFinancAssistidoEntidade
-    {
+	[Table("FI_FICHA_FINANC_ASSISTIDO")]
+	public class FichaFinancAssistidoEntidade
+	{
 		[Key]
 		public int SQ_FICHA { get; set; }
 		public int SQ_PROCESSO { get; set; }
@@ -21,6 +21,7 @@ namespace Intech.PrevSystemWeb.Entidades
 		public int? NR_PARCELA { get; set; }
 		public int? QT_PARCELA { get; set; }
 		public string IR_LANCAMENTO { get; set; }
+		public string DS_REFR { get; set; }
 		[Write(false)] public string DS_RUBRICA { get; set; }
 		[Write(false)] public string CD_RUBRICA { get; set; }
 		[Write(false)] public string DS_LANCAMENTO { get; set; }
@@ -33,6 +34,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		[Write(false)] public decimal? VAL_LIQUIDO { get; set; }
 		[Write(false)] public decimal? VAL_DESCONTO { get; set; }
 		[Write(false)] public decimal? VAL_PROVENTO { get; set; }
-        
-    }
+	}
 }

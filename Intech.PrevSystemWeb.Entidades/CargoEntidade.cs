@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("fi_cargo")]
-    public class CargoEntidade
-    {
+	[Table("fi_cargo")]
+	public class CargoEntidade
+	{
 		[Key]
 		public int SQ_CARGO { get; set; }
 		public int CD_PESSOA_PATR { get; set; }
@@ -15,6 +15,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		public DateTime? DT_INIC_VALIDADE { get; set; }
 		public DateTime? DT_TERM_VALIDADE { get; set; }
 		public int? SQ_CBOS { get; set; }
-        
-    }
+	}
 }

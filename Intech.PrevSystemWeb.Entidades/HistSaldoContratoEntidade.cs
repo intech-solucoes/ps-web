@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_HIST_SALDO_CONTRATO")]
-    public class HistSaldoContratoEntidade
-    {
+	[Table("FI_HIST_SALDO_CONTRATO")]
+	public class HistSaldoContratoEntidade
+	{
 		[Key]
 		public int SQ_HISTORICO { get; set; }
 		public int SQ_CONTRATO { get; set; }
@@ -27,6 +27,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		public string CODFORMA { get; set; }
 		public decimal? VL_JUROS { get; set; }
 		public decimal? VL_SALDO_ANTERIOR { get; set; }
-        
-    }
+	}
 }

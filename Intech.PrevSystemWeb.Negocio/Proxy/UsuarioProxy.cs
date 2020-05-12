@@ -133,7 +133,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 
             var pensionista = false;
 
-            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCpfComContrato(cpf).FirstOrDefault();
+            var pessoaFisica = new PessoaFisicaProxy().BuscarPorCPF(cpf).FirstOrDefault();
 
             if (pessoaFisica == null)
                 throw ExceptionDadosInvalidos;
@@ -149,7 +149,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
                 dadosPessoais = new DadosPessoaisProxy().BuscarPensionistaTodosPorCdPessoa(pessoaFisica.CD_PESSOA).First();
             }
 
-            if (!string.IsNullOrEmpty(dadosPessoais.NO_EMAIL) && email != dadosPessoais.NO_EMAIL)
+            if (!string.IsNullOrEmpty(dadosPessoais.NO_EMAIL.Trim()) && email != dadosPessoais.NO_EMAIL.Trim())
                 throw new Exception("O e-mail digitado não coincide com o e-mail registrado em nosso cadastro. Favor entrar em contato com a EqtPrev.");
 
             var senha = new Random().Next(999999).ToString();
@@ -167,7 +167,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
                     USR_ADMINISTRADOR: DMN_SN.NAO,
                     USR_TIPO_EXPIRACAO: DMN_SN.NAO,
                     USR_NOME: pessoaFisica.NO_PESSOA,
-                    USR_EMAIL: dadosPessoais.NO_EMAIL,
+                    USR_EMAIL: dadosPessoais.NO_EMAIL.Trim(),
                     CD_PESSOA: pessoaFisica.CD_PESSOA,
                     EE_TERMO_RESPONSABILIDADE: DMN_SN.SIM,
                     CD_PESSOA_CLIENTE: 1);
@@ -184,7 +184,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
                     USR_ADMINISTRADOR: DMN_SN.NAO,
                     USR_TIPO_EXPIRACAO: DMN_SN.NAO,
                     USR_NOME: pessoaFisica.NO_PESSOA,
-                    USR_EMAIL: dadosPessoais.NO_EMAIL,
+                    USR_EMAIL: dadosPessoais.NO_EMAIL.Trim(),
                     CD_PESSOA: pessoaFisica.CD_PESSOA,
                     EE_TERMO_RESPONSABILIDADE: DMN_SN.SIM,
                     CD_PESSOA_CLIENTE: 1);
@@ -205,7 +205,7 @@ namespace Intech.PrevSystemWeb.Negocio.Proxy
 
             EnvioEmail.Enviar(config.Email, email, $"{config.Cliente} - Nova senha de acesso", $"Esta é sua nova senha da {config.Cliente}: {senha}");
 
-            if(string.IsNullOrEmpty(dadosPessoais.NO_EMAIL))
+            if(string.IsNullOrEmpty(dadosPessoais.NO_EMAIL.Trim()))
             {
                 new EnderecoPessoaProxy().AtualizarEmailPorCdPessoa(dadosPessoais.CD_PESSOA, email);
             }

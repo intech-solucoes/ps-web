@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_PLANO_VINCULADO")]
-    public class PlanoVinculadoEntidade
-    {
+	[Table("FI_PLANO_VINCULADO")]
+	public class PlanoVinculadoEntidade
+	{
 		public int SQ_CONTRATO_TRABALHO { get; set; }
 		public int SQ_PLANO_PREVIDENCIAL { get; set; }
 		public string NR_INSCRICAO { get; set; }
@@ -31,6 +31,8 @@ namespace Intech.PrevSystemWeb.Entidades
 		public DateTime? DT_OBITO { get; set; }
 		public decimal? VL_JOIA { get; set; }
 		public DateTime? DT_REINTEGRACAO { get; set; }
+		public string ID_REINTEGRACAO { get; set; }
+		public int? SQ_INSCRICAO { get; set; }
 		public string TXT_OBSERVACAO { get; set; }
 		[Write(false)] public string DS_PLANO_PREVIDENCIAL { get; set; }
 		[Write(false)] public string DS_SIT_PLANO { get; set; }
@@ -39,6 +41,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		[Write(false)] public string NR_CODIGO_CNPB { get; set; }
 		[Write(false)] public string CD_INDICE_VALORIZACAO { get; set; }
 		[Write(false)] public string DS_OPCAO_TRIBUTACAO { get; set; }
-        
-    }
+	}
 }

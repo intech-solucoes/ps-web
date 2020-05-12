@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_PLANO_PREVIDENCIAL")]
-    public class PlanoPrevidencialEntidade
-    {
+	[Table("FI_PLANO_PREVIDENCIAL")]
+	public class PlanoPrevidencialEntidade
+	{
 		[Key]
 		public int SQ_PLANO_PREVIDENCIAL { get; set; }
 		public int CD_PESSOA_ENTID { get; set; }
@@ -43,6 +43,10 @@ namespace Intech.PrevSystemWeb.Entidades
 		public int? SQ_CONTA_APORTE { get; set; }
 		public int? SQ_BOLETO { get; set; }
 		public string IR_NATUREZA { get; set; }
-        
-    }
+		public string CD_TIPO_PLANO { get; set; }
+		public int? SQ_ESPECIE_RESGATE { get; set; }
+		public string CD_TAXA_ATUARIAL { get; set; }
+		public int? SQ_NATUREZA_EMPRETIMO { get; set; }
+		public int? SQ_CONTA_RESGATE { get; set; }
+	}
 }

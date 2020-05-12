@@ -4,9 +4,9 @@ using Dapper.Contrib.Extensions;
 
 namespace Intech.PrevSystemWeb.Entidades
 {
-    [Table("FI_PATROCINADORA")]
-    public class PatrocinadoraEntidade
-    {
+	[Table("FI_PATROCINADORA")]
+	public class PatrocinadoraEntidade
+	{
 		public int CD_PESSOA_PATR { get; set; }
 		public int CD_PESSOA_ENTID { get; set; }
 		public int? SQ_REGRA_REAJUSTE { get; set; }
@@ -23,6 +23,5 @@ namespace Intech.PrevSystemWeb.Entidades
 		public decimal? VL_FOLHA_PAGTO { get; set; }
 		public string EE_RECIPROCIDADE { get; set; }
 		[Write(false)] public string NO_PESSOA { get; set; }
-        
-    }
+	}
 }

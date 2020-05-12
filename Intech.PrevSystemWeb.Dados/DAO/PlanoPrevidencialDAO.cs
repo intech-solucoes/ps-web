@@ -1,25 +1,22 @@
-﻿#region Usings
-using Dapper;
+﻿using Dapper;
 using Intech.Lib.Dapper;
 using Intech.Lib.Web;
 using Intech.PrevSystemWeb.Entidades;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
-#endregion
+using System.Linq;
 
 namespace Intech.PrevSystemWeb.Dados.DAO
-{   
-    public abstract class PlanoPrevidencialDAO : BaseDAO<PlanoPrevidencialEntidade>
-    {
-        
+{
+	public abstract class PlanoPrevidencialDAO : BaseDAO<PlanoPrevidencialEntidade>
+	{
 		public virtual PlanoPrevidencialEntidade BuscarPorPlano(int SQ_PLANO_PREVIDENCIAL)
 		{
 			try
 			{
-				if(AppSettings.IS_SQL_SERVER_PROVIDER)
+				if (AppSettings.IS_SQL_SERVER_PROVIDER)
 					return Conexao.QuerySingleOrDefault<PlanoPrevidencialEntidade>("SELECT *  FROM FI_PLANO_PREVIDENCIAL  WHERE SQ_PLANO_PREVIDENCIAL = @SQ_PLANO_PREVIDENCIAL", new { SQ_PLANO_PREVIDENCIAL });
-				else if(AppSettings.IS_ORACLE_PROVIDER)
+				else if (AppSettings.IS_ORACLE_PROVIDER)
 					return Conexao.QuerySingleOrDefault<PlanoPrevidencialEntidade>("SELECT * FROM FI_PLANO_PREVIDENCIAL WHERE SQ_PLANO_PREVIDENCIAL=:SQ_PLANO_PREVIDENCIAL", new { SQ_PLANO_PREVIDENCIAL });
 				else
 					throw new Exception("Provider não suportado!");
@@ -30,5 +27,5 @@ namespace Intech.PrevSystemWeb.Dados.DAO
 			}
 		}
 
-    }
+	}
 }

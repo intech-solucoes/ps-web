@@ -1,17 +1,14 @@
-﻿#region Usings
-using Dapper;
+﻿using Dapper;
 using Intech.Lib.Dapper;
 using Intech.Lib.Web;
 using Intech.PrevSystemWeb.Entidades;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
-#endregion
+using System.Linq;
 
 namespace Intech.PrevSystemWeb.Dados.DAO
-{   
-    public abstract class UFDAO : BaseDAO<UFEntidade>
-    {
-        
-    }
+{
+	public abstract class UFDAO : BaseDAO<UFEntidade>
+	{
+	}
 }
